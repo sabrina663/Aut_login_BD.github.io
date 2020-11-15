@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='_css/style.css'>
+    <title>Autenticação de Login</title>
+</head>
+<body id='fundo'>
+    <div class="conteiner">
+            <h1>Login</h1>
+        <form>
+            <label for='user-input'>Usuario ou E-mail: </label>
+            <br>
+            <img class="man" src='_imagens/man_login.png' width="30px">
+            <input type="text" id='user-input'> 
+            <br>
+            <label for='user-pass'>Senha: </label>
+            <br>
+            <img class='key' src="_imagens/key_login.png" width="25px">
+            <input type="password" id='user-password'>
+        </form>
+        <div id='anwser'>
+
+        </div><!--//awser-->
+        <div class='button-all'>
+            <button class='button-enter' onclick='login()'>Entrar</button>
+        </div><!---//button-->
+    </div><!--//conteiner-->
+    <script src='_js/script.js'></script>
+</body>
+</html>

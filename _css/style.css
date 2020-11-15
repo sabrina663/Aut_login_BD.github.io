@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:#ececec url(../_imagens/background_white.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+body#fundo{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.conteiner{
+    color:rgba(0, 0, 0, 0.664);
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translate(-50%);
+    width: 400px;
+    height:500px;
+    background-color:rgba(255, 255, 255, 0.301);
+    border: 1px solid gray;
+    border-radius:15px;
+    padding: 40px;
+}
+h1{
+    text-align: center;
+    font-size: 2.0em;
+}
+form{
+    margin-top:50px;
+    font-size:1.2em;
+}
+form{
+    text-align: center;
+}
+input{
+    margin:10px 0 15px 0;
+    height:30px;
+    border: 1px solid rgba(128, 128, 128, 0.438);
+    outline: none;
+    margin-right: 40px;
+    padding-left:35px;
+    border-radius: 10px;
+    color:rgba(0, 0, 0, 0.664);
+}
+input#user-input{
+    margin-right: 40px;
+}
+input#user-password{
+    margin-right: 30px;
+}
+img.man{
+    position: relative;
+    top:4px;
+    left: 40px;
+}
+img.key{
+    position: relative;
+    top:8px;
+    left: 35px;
+}
+.button-all{
+    margin:30px;
+    text-align: center;
+}
+button{
+    padding:15px;
+    color:white;
+    background-color: seagreen;
+    border:1px solid green;
+    outline: none;
+}
+button:hover{
+    background-color: rgb(37, 112, 68);
+}
+#anwser{
+    margin-top: 15px;
+    border:1px solid gray;
+    background-color: rgba(240, 255, 240, 0.678);
+    border-radius: 5px;
+    height:90px;
+    padding:20px;
+}
+p{
+    color:rgba(0, 0, 0, 0.664);
+    text-align: center;
+
+}
