@@ -6,14 +6,13 @@
 body{
     background:#ececec url(../_imagens/background_white.jpg);
     background-size:cover;
-    background-repeat: no-repeat;
 }
 body#fundo{
-    background-size:cover;
+    background-size:100%;
     background-repeat: no-repeat;
     background-position: center;
 }
-.conteiner{
+#conteiner{
     color:rgba(0, 0, 0, 0.664);
     position: absolute;
     top:10%;
@@ -78,15 +77,17 @@ button:hover{
     background-color: rgb(37, 112, 68);
 }
 #anwser{
-    margin-top: 15px;
+    margin-top: 20px;
     border:1px solid gray;
     background-color: rgba(240, 255, 240, 0.678);
     border-radius: 5px;
-    height:90px;
-    padding:20px;
+    height:70px;
+    padding:25px;
 }
 p{
-    color:rgba(0, 0, 0, 0.664);
+    color:rgb(0, 0, 0);
     text-align: center;
-
+    font-size: 1.0em;
+    padding: 5px;
+    margin-top: -12px;
 }

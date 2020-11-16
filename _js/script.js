@@ -22,27 +22,31 @@ function login(){
                 console.log('Senha Encontrada')
                 document.getElementById('anwser').innerHTML = '<p>Acesso Permitido</p>'
                 document.getElementById('fundo').style.backgroundImage ='url(_imagens/green.jpg)'
+                document.getElementById('conteiner').style.backgroundColor = '#75FF60'
                 }else{
                 console.log('Senha Não Encontrada')
                 document.getElementById('anwser').innerHTML = '<p>Senha Invalida</p>'
                 document.getElementById('fundo').style.backgroundImage ='url(_imagens/danger.jpg)'
+                document.getElementById('conteiner').style.backgroundColor = '#FFF460'
                 }
             }else{
                 console.log('Campo senha vazia')
                 document.getElementById('anwser').innerHTML = '<p>Campo senha vazia, Por favor preencher</p>'
                 document.getElementById('fundo').style.backgroundImage ='url(_imagens/key.jpg)'
+                document.getElementById('conteiner').style.backgroundColor = '#D7D06E' 
             }
         //else pra ver se o user ta na array
         }else{
             console.log('User nao encontrada')    
             document.getElementById('anwser').innerHTML = '<p>Usuario não encontrado</p>'
             document.getElementById('fundo').style.backgroundImage ='url(_imagens/found.jpg)'
-
+            document.getElementById('conteiner').style.backgroundColor = '#83C7C2' 
         }
     //else pra ver ser o campo user ta vazio
     }else{
         console.log('Campo user vazia')
         document.getElementById('anwser').innerHTML = '<p>Campo Usuario Vazio, Por favor preencher com valores validos</p>'
         document.getElementById('fundo').style.backgroundImage ='url(_imagens/background_red.jpg)'
+        document.getElementById('conteiner').style.backgroundColor = '#D14242' 
     }
 }
