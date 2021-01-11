@@ -1,52 +1,134 @@
-// dados ja dentro ja guardados
-var dados= Array()
-dados['user1'] = Array('Sabrina','sabrina')
-console.log(dados)
-
-function login(){
-    //pegando os valores do campos
-    var user_input = document.getElementById('user-input').value
-    var user_password = document.getElementById('user-password').value
-    console.log(`user: ${user_input}`)
-    console.log(`password: ${user_password}`)
-    //verificaçao de acesso
-    //verificar se o campo user ta
-    if (user_input !== ''){
-        console.log('Campo user Não vazia')
-        if (dados['user1'][0].indexOf(user_input) !== -1){
-            console.log('User Encontrado')
-            if (user_password !== ''){  
-                console.log('Campo de senha Não vazia')
-                //verificar se a senha foi encontrada na array
-                if(dados['user1'][1].indexOf(user_password) !== -1 ){
-                console.log('Senha Encontrada')
-                document.getElementById('anwser').innerHTML = '<p>Acesso Permitido</p>'
-                document.getElementById('fundo').style.backgroundImage ='url(_imagens/green.jpg)'
-                document.getElementById('conteiner').style.backgroundColor = '#75FF60'
-                }else{
-                console.log('Senha Não Encontrada')
-                document.getElementById('anwser').innerHTML = '<p>Senha Invalida</p>'
-                document.getElementById('fundo').style.backgroundImage ='url(_imagens/danger.jpg)'
-                document.getElementById('conteiner').style.backgroundColor = '#FFF460'
-                }
-            }else{
-                console.log('Campo senha vazia')
-                document.getElementById('anwser').innerHTML = '<p>Campo senha vazia, Por favor preencher</p>'
-                document.getElementById('fundo').style.backgroundImage ='url(_imagens/key.jpg)'
-                document.getElementById('conteiner').style.backgroundColor = '#D7D06E' 
-            }
-        //else pra ver se o user ta na array
-        }else{
-            console.log('User nao encontrada')    
-            document.getElementById('anwser').innerHTML = '<p>Usuario não encontrado</p>'
-            document.getElementById('fundo').style.backgroundImage ='url(_imagens/found.jpg)'
-            document.getElementById('conteiner').style.backgroundColor = '#83C7C2' 
+class Dados{
+    constructor(a,b,c=0){
+        this.a = a
+        this.b = b
+        this.c = c
+        let id = localStorage.getItem('id')
+        if(id === null){
+            localStorage.setItem('id', 0)
         }
-    //else pra ver ser o campo user ta vazio
-    }else{
-        console.log('Campo user vazia')
-        document.getElementById('anwser').innerHTML = '<p>Campo Usuario Vazio, Por favor preencher com valores validos</p>'
-        document.getElementById('fundo').style.backgroundImage ='url(_imagens/background_red.jpg)'
-        document.getElementById('conteiner').style.backgroundColor = '#D14242' 
+    }
+    getid(){
+        let proximoid = localStorage.getItem('id')
+        return parseInt(proximoid) + 1
+    }
+    gravar(d){
+        let id = this.getid()
+        localStorage.setItem(id,JSON.stringify(d))
+        localStorage.setItem("id",id)
+    }
+    analise(){
+        for(let i in this){
+            if(this[i] === null || this[i] === undefined || this[i] === ''){
+                return false
+            }
+        }
+        return true
+    }
+    localuser(){
+        let dados = Array()
+        let id = localStorage.getItem('id')
+        for(let i = 1; i <= id; i ++){
+            let dado = JSON.parse(localStorage.getItem(i))
+            if(dado.a === null){
+                continue
+            }
+            dado.id = i
+            dados.push(dado.a)
+        }
+        return dados
+        
+    }
+    verificar(){
+        let user = this.a
+        let dados = this.localuser()
+        console.log(dados)
+        if (dados.indexOf(user) >= 0){
+            return false 
+        }
+        return true
+    }
+    senha(){
+        let senha = this.b
+        let confirm = this.c
+        if(senha === confirm){
+            return true
+        }
+        return false
+    }
+    localsenha(){
+        let dados = Array()
+        let id = localStorage.getItem('id')
+        for(let i = 1; i <= id; i ++){
+            let dado = JSON.parse(localStorage.getItem(i))
+            if(dado.b === null){
+                continue
+            }
+            dado.id = i
+            dados.push(dado.b)
+        }
+        return dados
+    }
+    login(){
+        let user = this.a
+        let senha = this.b
+        let userdado = this.localuser()
+        let senhadado = this.localsenha()
+        if(userdado.indexOf(user) >= 0 && senhadado.indexOf(senha) >= 0){
+            return true
+        }
+        return false
     }
 }
+/* logar */
+$("#btn").click(function(){
+    let user = $("#user")
+    let pass = $("#password")
+    let dados = new Dados(user.val(),pass.val())
+    console.log(dados)
+    if(dados.analise()){/* 
+        alert('Campos preenchidos') */
+        if(dados.login()){
+            $("#container").hide(1000);
+            $("#login").show(5000)
+        }else(
+            $("#msg").text('Usuario ou Senha estão incorretos')
+        )
+
+    }else{
+        $("#msg").text('Preencher ambos campos')
+    }
+
+})
+/* cadastro */
+$("#btn-cadastro").click(function(){
+    $("#container").hide(1000);
+    $("#conteiner-cadastro").show(2500);
+    let n_user = $('#n-user')
+    let n_pass = $('#n-pass')
+    let confirm = $('#confirm')
+    $('#submit').click(function(){
+        let dados = new Dados(n_user.val(),n_pass.val(),confirm.val())
+        if(dados.analise()){
+            console.log('Campo preenchido')
+            if(dados.verificar()){
+                if(dados.senha()){
+                    dados.gravar(dados)
+                    $("#conteiner-cadastro").hide(1000);
+                    $("#container").show(2500);
+                }else{
+                    $("#msg-cad").text('Confirmação de senha incompativel')
+                }
+            }else{
+                $("#msg-cad").text('Usuario ja existente')
+            }
+
+        }else{
+            $("#msg-cad").text('Preencher campos de cadastro')
+        }
+    })
+})
+$('#cancelar').click(()=>{
+    $("#conteiner-cadastro").hide(1000);
+    $("#container").show(2500);
+})

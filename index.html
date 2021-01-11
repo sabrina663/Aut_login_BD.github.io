@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='_css/style.css'>
-    <title>Autenticação de Login</title>
+    <title>Login</title>
 </head>
-<body id='fundo'>
-    <div id="conteiner">
+<body>
+    <div id='container' class="container container-lg">
+        <section class='h1-sec'>
             <h1>Login</h1>
-        <form>
-            <label for='user-input'>Usuario ou E-mail: </label>
-            <br>
-            <img class="man" src='_imagens/man_login.png' width="30px">
-            <input type="text" id='user-input'> 
-            <br>
-            <label for='user-pass'>Senha: </label>
-            <br>
-            <img class='key' src="_imagens/key_login.png" width="25px">
-            <input type="password" id='user-password'>
-        </form>
-        <div id='anwser'>
-            <p>Preencha o campo acima</p>
-        </div><!--//awser-->
-        <div class='button-all'>
-            <button class='button-enter' onclick='login()'>Entrar</button>
-        </div><!---//button-->
-    </div><!--//conteiner-->
+        </section>
+            <div class="cont-login flex">
+                <p id='msg' class="msg-p"></p>
+                <section class="input-sec flex">
+                    <input type='text' id='user' class="input-lg input-user" placeholder="Usuario" maxlength="8">
+                    <input type='password' id='password' class="input-lg" placeholder="Senha" max-lenght="5">
+                </section><!-- input-sec -->
+                <section class="btn-sec">
+                    <button id='btn' class="btn btn-login">Entrar</button>
+                    <section class="p-sec">
+                        <a href='#conteiner-cadastro' id='btn-cadastro' class="link">Não tem cadastro?</a>
+                    </section>
+                </section><!-- btn-sec -->
+            </div><!-- cont-login -->
+    </div><!-- container -->
+    <div id='conteiner-cadastro' class="container cont-cad">
+        <section class='h1-sec'>
+            <h1>Cadastro</h1>
+        </section>
+        <section class="form-sec">
+            <div class="form-flex">
+                <p id='msg-cad' class="msg-p"></p>
+                <input type="text" id="n-user" class='input-form' placeholder="Digite seu Usuario">
+                <input type="password" id="n-pass" class='input-form' placeholder="Digite sua Senha" max-lenght="5">
+                <input type="text" id="confirm" class='input-form' placeholder="Confirme sua Senha">
+                <section class="sec-btn">
+                    <button id='cancelar' class="btn btn-cadastro">Cancelar</button>
+                    <button id='submit' class="btn btn-cadastro">Cadastrar</button>
+                </section>
+            </div><!-- form-->
+        </section><!-- form-sec -->
+    </div><!-- container-cadastro -->
+    <div id='login' class="login container">
+        <section class="sec-login">
+            <img src="_imagens/check.png">
+            <h2>Login Efetuado com Sucesso!!!</h2>
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='_js/script.js'></script>
 </body>
 </html>

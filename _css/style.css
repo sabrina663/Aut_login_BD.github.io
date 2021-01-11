@@ -1,93 +1,139 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
 body{
-    background:#ececec url(../_imagens/background_white.jpg);
+    background-image:linear-gradient(to bottom, #370617, #071046);
+    background-repeat:no-repeat;
     background-size:cover;
+    background-attachment:fixed;
 }
-body#fundo{
-    background-size:100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#conteiner{
-    color:rgba(0, 0, 0, 0.664);
-    position: absolute;
-    top:10%;
+.container{
+    position:absolute;
+    top:50%;
     left:50%;
-    transform: translate(-50%);
-    width: 400px;
+    transform: translate(-50%,-50%);
+    width:90%;
     height:500px;
-    background-color:rgba(255, 255, 255, 0.301);
-    border: 1px solid gray;
-    border-radius:15px;
-    padding: 40px;
-}
-h1{
-    text-align: center;
-    font-size: 2.0em;
-}
-form{
-    margin-top:50px;
-    font-size:1.2em;
-}
-form{
-    text-align: center;
-}
-input{
-    margin:10px 0 15px 0;
-    height:30px;
-    border: 1px solid rgba(128, 128, 128, 0.438);
-    outline: none;
-    margin-right: 40px;
-    padding-left:35px;
-    border-radius: 10px;
-    color:rgba(0, 0, 0, 0.664);
-}
-input#user-input{
-    margin-right: 40px;
-}
-input#user-password{
-    margin-right: 30px;
-}
-img.man{
-    position: relative;
-    top:4px;
-    left: 40px;
-}
-img.key{
-    position: relative;
-    top:8px;
-    left: 35px;
-}
-.button-all{
-    margin:30px;
-    text-align: center;
-}
-button{
-    padding:15px;
-    color:white;
-    background-color: seagreen;
-    border:1px solid green;
-    outline: none;
-}
-button:hover{
-    background-color: rgb(37, 112, 68);
-}
-#anwser{
-    margin-top: 20px;
-    border:1px solid gray;
-    background-color: rgba(240, 255, 240, 0.678);
     border-radius: 5px;
-    height:70px;
-    padding:25px;
 }
-p{
-    color:rgb(0, 0, 0);
+.container-lg{
+    background-color:#5d088f86;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.h1-sec{
+    padding:5px 0px;
     text-align: center;
-    font-size: 1.0em;
-    padding: 5px;
-    margin-top: -12px;
+    color:rgba(255, 255, 255, 0.774);
+    font-size: 1.2rem;
+}
+.cont-login{
+    position: relative;
+    top:5%;
+}
+.input-sec{
+    padding:10px;
+}
+.input-lg{
+    margin-bottom:20px;
+    width:80%;
+    padding:15px 15px;
+    outline:none;
+    border:none;
+    background-color:rgba(255, 255, 255, 0.493);
+    transition:all 1s;
+}
+.input-lg:focus{
+    background-color:#6909a086;
+    color:white;
+}
+.btn-sec{
+    text-align: center;
+}
+.btn{
+    padding:10px 15px;
+    outline:none;
+    border:none;
+    color:rgba(255, 255, 255, 0.781);
+}
+.btn-login{
+    background:#488355;
+}
+.btn-login:hover{
+    background:#26492d;
+}
+::-webkit-input-placeholder{
+    color:rgba(255, 255, 255, 0.767);
+}
+.p-sec{
+    margin-top:40px;
+}
+.p-sec a{
+    color:rgb(176, 174, 177);
+}
+.btn-ncadastro{
+    border:none;
+    background: red;
+}
+/* cadastro */
+.cont-cad{
+    background: #50051f9c;
+    display:none;
+}
+.form-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-sec{
+    padding:10px 0px;
+}
+.lb-form{
+    position: relative;
+    right:60px;
+    font-size: 1.0rem;
+    color:rgb(196, 196, 196);
+    margin-bottom:10px;
+}
+.input-form{
+    margin-bottom:40px;
+    padding:15px;
+    width:70%;
+    background-color:#8f3e5a63;
+    border:none;
+    outline:none;
+    color:rgb(172, 171, 171);
+}
+.input-form:focus{
+    background-color:#350a1963;
+}
+.sec-btn{
+    display:flex;
+    flex-wrap:wrap;
+}
+.btn-cadastro{
+    background: #aa09429c;
+    margin-left:10px;
+}
+.btn-cadastro:hover{
+    background: #5304209c;
+}
+.login{
+    display:none;
+    border:1px solid rgba(255, 255, 255, 0.678);
+    background-color:rgb(59, 124, 59);
+    text-align: center;
+}
+.sec-login{
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    color:white;
+}
+.sec-login img{
+    width:20%;
+}
+.msg-p{
+    color:white;
 }
