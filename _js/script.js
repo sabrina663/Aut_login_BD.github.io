@@ -89,8 +89,8 @@ $("#btn").click(function(){
     if(dados.analise()){/* 
         alert('Campos preenchidos') */
         if(dados.login()){
-            $("#container").hide(1000);
-            $("#login").show(5000)
+            $("#container").hide(900);
+            $("#login").show(3000)
         }else(
             $("#msg").text('Usuario ou Senha estão incorretos')
         )
@@ -103,7 +103,7 @@ $("#btn").click(function(){
 /* cadastro */
 $("#btn-cadastro").click(function(){
     $("#container").hide(1000);
-    $("#conteiner-cadastro").show(5000);
+    $("#conteiner-cadastro").show(3000);
     let n_user = $('#n-user')
     let n_pass = $('#n-pass')
     let confirm = $('#confirm')

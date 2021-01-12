@@ -24,7 +24,7 @@ body{
     text-align: center;
     color:rgba(255, 255, 255, 0.774);
     font-size: 1.2rem;
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Nunito', sans-serif;
     margin-top:20px;
 }
 .cont-login{
@@ -101,7 +101,7 @@ body{
 .login{
     display:none;
     border:1px solid rgba(255, 255, 255, 0.678);
-    background-color:#0a3328;
+    background-color:#084938;
     text-align: center;
 }
 .sec-login{
@@ -120,4 +120,9 @@ body{
 .msg-p{
     font-size:1.0rem;
     color:white;
+}
+@media screen and (min-width:800px){
+    .container{
+        width:50%;
+    }
 }
