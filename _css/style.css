@@ -1,5 +1,5 @@
 body{
-    background-image:linear-gradient(to bottom, #370617, #071046);
+    background-image:linear-gradient(to bottom, #073B4C, #11637e);
     background-repeat:no-repeat;
     background-size:cover;
     background-attachment:fixed;
@@ -12,9 +12,7 @@ body{
     width:90%;
     height:500px;
     border-radius: 5px;
-}
-.container-lg{
-    background-color:#5d088f86;
+    background-color:#118AB2;
 }
 .flex{
     display: flex;
@@ -26,6 +24,8 @@ body{
     text-align: center;
     color:rgba(255, 255, 255, 0.774);
     font-size: 1.2rem;
+    font-family: 'Playfair Display SC', serif;
+    margin-top:20px;
 }
 .cont-login{
     position: relative;
@@ -34,18 +34,19 @@ body{
 .input-sec{
     padding:10px;
 }
-.input-lg{
-    margin-bottom:20px;
+.input-dados{
+    margin-bottom:40px;
     width:80%;
     padding:15px 15px;
     outline:none;
     border:none;
-    background-color:rgba(255, 255, 255, 0.493);
+    background-color:#03161d9f;
     transition:all 1s;
-}
-.input-lg:focus{
-    background-color:#6909a086;
     color:white;
+}
+.input-dados:focus{
+    background-color:rgba(245, 245, 245, 0.795);
+    color:black;
 }
 .btn-sec{
     text-align: center;
@@ -57,10 +58,10 @@ body{
     color:rgba(255, 255, 255, 0.781);
 }
 .btn-login{
-    background:#488355;
+    background:#549462;
 }
 .btn-login:hover{
-    background:#26492d;
+    background:#396d44;
 }
 ::-webkit-input-placeholder{
     color:rgba(255, 255, 255, 0.767);
@@ -69,15 +70,10 @@ body{
     margin-top:40px;
 }
 .p-sec a{
-    color:rgb(176, 174, 177);
-}
-.btn-ncadastro{
-    border:none;
-    background: red;
+    color:rgb(255, 255, 255);
 }
 /* cadastro */
 .cont-cad{
-    background: #50051f9c;
     display:none;
 }
 .form-flex{
@@ -88,40 +84,24 @@ body{
 .form-sec{
     padding:10px 0px;
 }
-.lb-form{
-    position: relative;
-    right:60px;
-    font-size: 1.0rem;
-    color:rgb(196, 196, 196);
-    margin-bottom:10px;
-}
 .input-form{
-    margin-bottom:40px;
-    padding:15px;
-    width:70%;
-    background-color:#8f3e5a63;
-    border:none;
-    outline:none;
-    color:rgb(172, 171, 171);
-}
-.input-form:focus{
-    background-color:#350a1963;
+    width:50%;
 }
 .sec-btn{
     display:flex;
     flex-wrap:wrap;
 }
 .btn-cadastro{
-    background: #aa09429c;
+    background-color: #0b546d;
     margin-left:10px;
 }
 .btn-cadastro:hover{
-    background: #5304209c;
+    background: #041e27;
 }
 .login{
     display:none;
     border:1px solid rgba(255, 255, 255, 0.678);
-    background-color:rgb(59, 124, 59);
+    background-color:#0a3328;
     text-align: center;
 }
 .sec-login{
@@ -132,8 +112,12 @@ body{
     color:white;
 }
 .sec-login img{
-    width:20%;
+    width:5.0rem;
+}
+.sec-login h2{
+    font-size:1.1rem;
 }
 .msg-p{
+    font-size:1.0rem;
     color:white;
 }

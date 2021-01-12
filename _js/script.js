@@ -1,8 +1,8 @@
 class Dados{
     constructor(a,b,c=0){
-        this.a = a
-        this.b = b
-        this.c = c
+        this.user = a
+        this.pass = b
+        this.confirm = c
         let id = localStorage.getItem('id')
         if(id === null){
             localStorage.setItem('id', 0)
@@ -40,7 +40,7 @@ class Dados{
         
     }
     verificar(){
-        let user = this.a
+        let user = this.user
         let dados = this.localuser()
         console.log(dados)
         if (dados.indexOf(user) >= 0){
@@ -49,8 +49,8 @@ class Dados{
         return true
     }
     senha(){
-        let senha = this.b
-        let confirm = this.c
+        let senha = this.pass
+        let confirm = this.confirm
         if(senha === confirm){
             return true
         }
@@ -70,8 +70,8 @@ class Dados{
         return dados
     }
     login(){
-        let user = this.a
-        let senha = this.b
+        let user = this.user
+        let senha = this.pass
         let userdado = this.localuser()
         let senhadado = this.localsenha()
         if(userdado.indexOf(user) >= 0 && senhadado.indexOf(senha) >= 0){
@@ -103,7 +103,7 @@ $("#btn").click(function(){
 /* cadastro */
 $("#btn-cadastro").click(function(){
     $("#container").hide(1000);
-    $("#conteiner-cadastro").show(2500);
+    $("#conteiner-cadastro").show(5000);
     let n_user = $('#n-user')
     let n_pass = $('#n-pass')
     let confirm = $('#confirm')
@@ -115,7 +115,7 @@ $("#btn-cadastro").click(function(){
                 if(dados.senha()){
                     dados.gravar(dados)
                     $("#conteiner-cadastro").hide(1000);
-                    $("#container").show(2500);
+                    $("#container").show(5000);
                 }else{
                     $("#msg-cad").text('Confirmação de senha incompativel')
                 }
