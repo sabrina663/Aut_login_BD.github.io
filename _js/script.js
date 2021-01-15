@@ -75,9 +75,9 @@ class Dados{
         let userdado = this.localuser()
         let senhadado = this.localsenha()
         if(userdado.indexOf(user) >= 0 && senhadado.indexOf(senha) >= 0){
-            return true
+            return false
         }
-        return false
+        return true
     }
 }
 /* logar */
@@ -86,9 +86,10 @@ $("#btn").click(function(){
     let pass = $("#password")
     let dados = new Dados(user.val(),pass.val())
     console.log(dados)
-    if(dados.analise()){/* 
-        alert('Campos preenchidos') */
+    if(dados.analise()){
+        console.log('Campos preenchidos')
         if(dados.login()){
+            console.log('Login Efetuado')
             $("#container").hide(900);
             $("#login").show(3000)
         }else(
@@ -98,7 +99,6 @@ $("#btn").click(function(){
     }else{
         $("#msg").text('Preencher ambos campos')
     }
-
 })
 /* cadastro */
 $("#btn-cadastro").click(function(){
@@ -115,7 +115,7 @@ $("#btn-cadastro").click(function(){
                 if(dados.senha()){
                     dados.gravar(dados)
                     $("#conteiner-cadastro").hide(1000);
-                    $("#container").show(5000);
+                    $("#login").show(3000)
                 }else{
                     $("#msg-cad").text('Confirmação de senha incompativel')
                 }
@@ -127,6 +127,9 @@ $("#btn-cadastro").click(function(){
             $("#msg-cad").text('Preencher campos de cadastro')
         }
     })
+    n_user.val("")
+    n_pass.val("")
+    confirm.val("")
 })
 $('#cancelar').click(()=>{
     $("#conteiner-cadastro").hide(1000);

@@ -9,9 +9,8 @@ body{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    width:90%;
-    height:500px;
-    border-radius: 5px;
+    width:100%;
+    height:100%;
     background-color:#118AB2;
 }
 .flex{
@@ -23,21 +22,13 @@ body{
     padding:5px 0px;
     text-align: center;
     color:rgba(255, 255, 255, 0.774);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: 'Nunito', sans-serif;
-    margin-top:20px;
-}
-.cont-login{
-    position: relative;
-    top:5%;
-}
-.input-sec{
-    padding:10px;
 }
 .input-dados{
-    margin-bottom:40px;
+    margin-bottom:20px;
     width:80%;
-    padding:15px 15px;
+    padding:15px;
     outline:none;
     border:none;
     background-color:#03161d9f;
@@ -45,29 +36,33 @@ body{
     color:white;
 }
 .input-dados:focus{
-    background-color:rgba(245, 245, 245, 0.795);
-    color:black;
+    background-color:#03161d3a;
 }
-.btn-sec{
+.sec-action{
     text-align: center;
+    position: relative;
+    top:20px;
 }
 .btn{
-    padding:10px 15px;
+    padding:15px;
     outline:none;
-    border:none;
     color:rgba(255, 255, 255, 0.781);
 }
 .btn-login{
+    width:90%;
     background:#549462;
+    border:1px solid #396d44;
 }
 .btn-login:hover{
     background:#396d44;
 }
+/* mudar cor de letras placeholder */
 ::-webkit-input-placeholder{
     color:rgba(255, 255, 255, 0.767);
 }
 .p-sec{
-    margin-top:40px;
+    position: relative;
+    top:50px;
 }
 .p-sec a{
     color:rgb(255, 255, 255);
@@ -92,15 +87,16 @@ body{
     flex-wrap:wrap;
 }
 .btn-cadastro{
+    margin-bottom: 10px;
+    border:1px solid #041e27;
     background-color: #0b546d;
-    margin-left:10px;
 }
 .btn-cadastro:hover{
     background: #041e27;
 }
+/* login efetuado */
 .login{
     display:none;
-    border:1px solid rgba(255, 255, 255, 0.678);
     background-color:#084938;
     text-align: center;
 }
@@ -117,12 +113,20 @@ body{
 .sec-login h2{
     font-size:1.1rem;
 }
+/* mensagem de aviso */
 .msg-p{
     font-size:1.0rem;
     color:white;
 }
 @media screen and (min-width:800px){
     .container{
-        width:50%;
+        width:100%;
+    }
+    .sec-action-position{
+        position: relative;
+        top:100px;
+    }
+    .login{
+        width: 100%;
     }
 }
