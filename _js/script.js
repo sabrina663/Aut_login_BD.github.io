@@ -34,7 +34,7 @@ class Dados{
                 continue
             }
             dado.id = i
-            dados.push(dado.a)
+            dados.push(dado.user)
         }
         return dados
         
@@ -44,7 +44,7 @@ class Dados{
         let dados = this.localuser()
         console.log(dados)
         if (dados.indexOf(user) >= 0){
-            return false 
+            return false
         }
         return true
     }
@@ -61,11 +61,11 @@ class Dados{
         let id = localStorage.getItem('id')
         for(let i = 1; i <= id; i ++){
             let dado = JSON.parse(localStorage.getItem(i))
-            if(dado.b === null){
+            if(dado.pass === null){
                 continue
             }
             dado.id = i
-            dados.push(dado.b)
+            dados.push(dado.pass)
         }
         return dados
     }
@@ -74,10 +74,12 @@ class Dados{
         let senha = this.pass
         let userdado = this.localuser()
         let senhadado = this.localsenha()
+        console.log(userdado)
+        console.log(senhadado)
         if(userdado.indexOf(user) >= 0 && senhadado.indexOf(senha) >= 0){
-            return false
+            return true
         }
-        return true
+        return false
     }
 }
 /* logar */
@@ -90,8 +92,8 @@ $("#btn").click(function(){
         console.log('Campos preenchidos')
         if(dados.login()){
             console.log('Login Efetuado')
-            $("#container").hide(900);
-            $("#login").show(3000)
+            $("#container").hide(200);
+            $("#login").show(800)
         }else(
             $("#msg").text('Usuario ou Senha estão incorretos')
         )
@@ -102,8 +104,8 @@ $("#btn").click(function(){
 })
 /* cadastro */
 $("#btn-cadastro").click(function(){
-    $("#container").hide(1000);
-    $("#conteiner-cadastro").show(3000);
+    $("#container").hide(200);
+    $("#conteiner-cadastro").show(800);
     let n_user = $('#n-user')
     let n_pass = $('#n-pass')
     let confirm = $('#confirm')
@@ -112,10 +114,12 @@ $("#btn-cadastro").click(function(){
         if(dados.analise()){
             console.log('Campo preenchido')
             if(dados.verificar()){
+                console.log("user nao existente")
                 if(dados.senha()){
+                    console.log('senha compativel')
                     dados.gravar(dados)
-                    $("#conteiner-cadastro").hide(1000);
-                    $("#login").show(3000)
+                    $("#conteiner-cadastro").hide(200);
+                    $("#login").show(5000)
                 }else{
                     $("#msg-cad").text('Confirmação de senha incompativel')
                 }
@@ -127,11 +131,8 @@ $("#btn-cadastro").click(function(){
             $("#msg-cad").text('Preencher campos de cadastro')
         }
     })
-    n_user.val("")
-    n_pass.val("")
-    confirm.val("")
 })
 $('#cancelar').click(()=>{
-    $("#conteiner-cadastro").hide(1000);
-    $("#container").show(2500);
+    $("#conteiner-cadastro").hide(200);
+    $("#container").show(800);
 })
