@@ -12,11 +12,12 @@ body{
     width:100%;
     height:100%;
     background-color:#118AB2;
+    
 }
 .flex{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:center;
 }
 .h1-sec{
     padding:5px 0px;
